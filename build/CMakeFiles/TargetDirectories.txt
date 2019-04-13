@@ -1,0 +1,3 @@
+D:/Development/C++/HBTCPServer/build/CMakeFiles/test_app.dir
+D:/Development/C++/HBTCPServer/build/CMakeFiles/ALL_BUILD.dir
+D:/Development/C++/HBTCPServer/build/CMakeFiles/ZERO_CHECK.dir
