@@ -25,9 +25,15 @@ public:
 	boost::asio::ip::tcp::socket& get_socket();
 
 	void start();
+
+	void handle_read();
+	void handle_write();
+
+	// If not handling login, handle signup instead
+	bool is_handling_login();
+
 	void write_message();
+	void welcome_message();
+
 	void handle_read(const boost::system::error_code& ec, std::size_t bytes_transferred);
-
-
-
 };
