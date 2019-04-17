@@ -59,9 +59,9 @@ void Session::handle_write()
 	// Handle writing data to the client
 }
 
-void Session::is_handling_login()
+bool Session::is_handling_login()
 {
-
+	return true;
 }
 
 void Session::write_message()

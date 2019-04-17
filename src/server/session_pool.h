@@ -17,7 +17,7 @@ public:
 
     void add_to_pool(std::shared_ptr<Session> session);
 
-	std::shared_ptr<Session> SessionPool::get_session(int session);
+	std::shared_ptr<Session> get_session(int session);
 	
 	int get_size();
 };

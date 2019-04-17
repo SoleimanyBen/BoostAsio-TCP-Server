@@ -1,3 +1,5 @@
+#include <iostream>
+
 
 class User
 {
@@ -9,6 +11,4 @@ public:
 private:
 	int user_id;
 	int current_channel;
-
-	std::string username;
 };
