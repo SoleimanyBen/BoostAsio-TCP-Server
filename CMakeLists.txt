@@ -10,15 +10,18 @@ add_executable(test_app ${sources})
 
 # Adding Librarires #
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "-lboost_system -lboost_thread")
+
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 
-set(BOOST_ROOT "D:/src/libs/boost_1_69_0")
-set(BOOST_INCLUDEDIR "D:/src/libs/boost_1_69_0/boost")
-set(BOOST_LIBRARYDIR "D:/src/libs/boost_1_69_0/lib")
+set(BOOST_ROOT "/home/ben/libs/boost_1_70_0/")
+set(BOOST_INCLUDEDIR "/home/ben/libs/boost_1_70_0/boost")
+set(BOOST_LIBRARYDIR "/home/ben/libs/boost_1_70_0/stage/lib")
 
-FIND_PACKAGE(Boost 1.69.0 REQUIRED COMPONENTS system)
+FIND_PACKAGE(Boost 1.70.0 REQUIRED COMPONENTS system)
 
 IF(Boost_FOUND)
 	INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
@@ -31,6 +34,10 @@ IF(WIN32)
 	target_link_libraries(test_app ws2_32)
 	target_link_libraries(test_app wsock32)
 ENDIF(WIN32)
+
+IF(UNIX)
+	target_link_libraries(test_app "-lboost_system -lboost_thread -lpthread")
+ENDIF(UNIX)
 
 include_directories (${PROJECT_SOURCE_DECLARATION_DIRECTORY})
 
